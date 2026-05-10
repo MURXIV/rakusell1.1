@@ -1,0 +1,20 @@
+Ключи для проекта Rakusell
+==========================
+
+⓵  Green API Instance ID
+    7107614920
+
+⓶  Green API Token
+    7c81ee3991ab4ba2b08c75f551fe3305fc586c3df6dd4ba6a6
+
+⓷  DeepSeek API Key
+    sk-9651f9bb46184af49f0d49f3bf55c3f5
+
+⓸  OpenAI API Key
+    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
+
+⓹  Gemini API Key
+    AIzaSyBwdiMGv4guFnPRN1f0hzizHKB-R-QxJb0
+
+==========================
+Скопировать в backend/.env согласно README
