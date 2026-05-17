@@ -36,6 +36,12 @@ class WhatsAppWebhookView(APIView):
             if type_webhook not in ('incomingMessageReceived', 'outgoingMessageStatus'):
                 return Response({'status': 'ignored'}, status=status.HTTP_200_OK)
 
+            # Игнорируем групповые чаты (JID заканчивается на @g.us)
+            sender_data = payload.get('senderData', {})
+            chat_id = sender_data.get('chatId', '') or sender_data.get('sender', '')
+            if chat_id.endswith('@g.us'):
+                return Response({'status': 'ignored_group'}, status=status.HTTP_200_OK)
+
             id_message = payload.get('idMessage', '')
             if not id_message:
                 return Response({'status': 'ignored'}, status=status.HTTP_200_OK)
